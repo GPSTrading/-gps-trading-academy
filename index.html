@@ -4,1604 +4,970 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GPS Trading Academy | Master the Markets</title>
+<title>GPS Trading Academy | Professional Trading Education</title>
 
-<meta name="description"
-content="GPS Trading Academy provides practical trading education, forex education and one-to-one trading coaching. Learn from over 20 years of financial trading experience.">
+<meta name="description" content="GPS Trading Academy — professional trading education built on 20+ years of market experience.">
 
 <style>
 
 :root{
---bg:#050910;
---bg2:#08111d;
---panel:#0c1624;
---panel2:#101d2d;
---green:#27e39a;
---green2:#13b978;
---blue:#2684ff;
---white:#f7fbff;
---text:#c4cfdb;
---muted:#8291a3;
---border:#1c3045;
---danger:#ff6176;
---gold:#f5c76a;
+  --green:#00e88a;
+  --green2:#18c978;
+  --dark:#03100d;
+  --dark2:#061c16;
+  --text:#0a1513;
+  --muted:#63706d;
+  --white:#fff;
+  --line:#dfe8e5;
+  --shadow:0 15px 45px rgba(0,0,0,.10);
+  --radius:16px;
 }
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:
-radial-gradient(circle at 80% 5%,rgba(39,227,154,.12),transparent 25%),
-radial-gradient(circle at 10% 25%,rgba(38,132,255,.10),transparent 28%),
-linear-gradient(180deg,#050910,#07101a 45%,#050910);
-color:var(--white);
-line-height:1.6;
-overflow-x:hidden;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.55;
 }
 
-body:before{
-content:"";
-position:fixed;
-inset:0;
-pointer-events:none;
-background-image:
-linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-background-size:55px 55px;
-mask-image:linear-gradient(to bottom,black,transparent);
-z-index:-1;
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
-/* NAVIGATION */
-
-nav{
-position:sticky;
-top:0;
-z-index:1000;
-background:rgba(5,9,16,.88);
-backdrop-filter:blur(18px);
-border-bottom:1px solid var(--border);
+img{
+  max-width:100%;
+  display:block;
 }
 
-.nav-container{
-max-width:1200px;
-margin:auto;
-height:72px;
-padding:0 25px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.logo{
-font-size:21px;
-font-weight:900;
-letter-spacing:1px;
-white-space:nowrap;
-}
-
-.logo span{
-color:var(--green);
-}
-
-.nav-links{
-display:flex;
-gap:25px;
-align-items:center;
-}
-
-.nav-links a{
-color:#b8c5d4;
-text-decoration:none;
-font-size:14px;
-font-weight:600;
-}
-
-.nav-links a:hover{
-color:var(--green);
-}
-
-.nav-button{
-padding:10px 17px;
-background:var(--green);
-color:#03100b!important;
-border-radius:8px;
-}
-
-/* TOP BAR */
-
-.topbar{
-text-align:center;
-padding:8px 15px;
-background:#08151e;
-border-bottom:1px solid #163027;
-font-size:12px;
-color:#8fa3b6;
-}
-
-.topbar strong{
-color:var(--green);
-}
-
-/* HERO */
-
-.hero{
-max-width:1200px;
-margin:auto;
-padding:95px 25px 80px;
-display:grid;
-grid-template-columns:1.05fr .95fr;
-gap:65px;
-align-items:center;
-}
-
-.hero-badge{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:8px 13px;
-border:1px solid #245d48;
-background:#0b211a;
-border-radius:30px;
-color:#83eac0;
-font-size:12px;
-font-weight:800;
-letter-spacing:.6px;
-}
-
-.hero-badge:before{
-content:"";
-width:7px;
-height:7px;
-background:var(--green);
-border-radius:50%;
-box-shadow:0 0 12px var(--green);
-}
-
-.hero h1{
-font-size:clamp(46px,6vw,76px);
-line-height:1.01;
-margin:23px 0;
-letter-spacing:-3px;
-}
-
-.hero h1 span{
-color:var(--green);
-}
-
-.hero-description{
-font-size:19px;
-color:var(--text);
-max-width:650px;
-}
-
-.hero-description strong{
-color:white;
-}
-
-.hero-buttons{
-display:flex;
-gap:13px;
-flex-wrap:wrap;
-margin-top:30px;
+.container{
+  width:min(1180px,92%);
+  margin:auto;
 }
 
 .btn{
-display:inline-block;
-padding:14px 22px;
-border-radius:9px;
-text-decoration:none;
-font-weight:800;
-font-size:14px;
-transition:.25s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 15px 35px rgba(0,0,0,.4);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 22px;
+  border-radius:30px;
+  font-weight:800;
+  border:1px solid var(--green);
+  transition:.25s;
+  cursor:pointer;
 }
 
 .btn-primary{
-background:var(--green);
-color:#03100b;
+  background:var(--green);
+  color:#00150e;
 }
 
-.btn-secondary{
-background:#0b1522;
-border:1px solid var(--border);
-color:white;
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(0,232,138,.25);
 }
 
-.hero-stats{
-display:flex;
-gap:30px;
-margin-top:35px;
-flex-wrap:wrap;
+.btn-outline{
+  color:#fff;
+  background:transparent;
 }
 
-.stat strong{
-display:block;
-font-size:22px;
-color:white;
+.btn-outline:hover{
+  background:rgba(0,232,138,.08);
 }
 
-.stat span{
-font-size:11px;
-color:var(--muted);
-text-transform:uppercase;
-letter-spacing:1px;
+.section-label{
+  font-size:12px;
+  letter-spacing:2px;
+  color:#00c878;
+  font-weight:900;
+  text-transform:uppercase;
 }
 
-/* CHART VISUAL */
-
-.trading-screen{
-position:relative;
-background:linear-gradient(145deg,#101e2d,#07101a);
-border:1px solid #294057;
-border-radius:22px;
-padding:20px;
-box-shadow:
-0 30px 80px rgba(0,0,0,.55),
-0 0 70px rgba(39,227,154,.08);
-overflow:hidden;
-}
-
-.trading-screen:before{
-content:"";
-position:absolute;
-width:280px;
-height:280px;
-right:-120px;
-top:-120px;
-border-radius:50%;
-background:rgba(39,227,154,.13);
-filter:blur(50px);
-}
-
-.screen-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-border-bottom:1px solid var(--border);
-padding-bottom:15px;
-margin-bottom:15px;
-}
-
-.market-name{
-font-weight:bold;
-}
-
-.market-name small{
-display:block;
-font-size:10px;
-color:var(--muted);
-font-weight:normal;
-}
-
-.market-price{
-color:var(--green);
-font-size:20px;
-font-weight:bold;
-}
-
-.chart{
-height:290px;
-position:relative;
-overflow:hidden;
-background:
-linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-background-size:42px 42px;
-border:1px solid #17283a;
-}
-
-.chart svg{
-width:100%;
-height:100%;
-}
-
-.screen-bottom{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-margin-top:15px;
-}
-
-.metric{
-background:#08111b;
-border:1px solid var(--border);
-border-radius:9px;
-padding:12px;
-}
-
-.metric small{
-color:var(--muted);
-display:block;
-font-size:9px;
-}
-
-.metric strong{
-font-size:14px;
-}
-
-.green{
-color:var(--green);
-}
-
-.red{
-color:var(--danger);
-}
-
-/* TRUST */
-
-.trust{
-max-width:1200px;
-margin:auto;
-padding:20px 25px;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
-}
-
-.trust-item{
-border:1px solid var(--border);
-background:#08111b;
-padding:16px;
-border-radius:10px;
-text-align:center;
-}
-
-.trust-item strong{
-display:block;
-font-size:15px;
-}
-
-.trust-item span{
-color:var(--muted);
-font-size:11px;
-}
-
-/* GENERAL */
-
-section{
-max-width:1200px;
-margin:auto;
-padding:90px 25px;
-}
-
-.section-heading{
-max-width:720px;
-margin-bottom:40px;
-}
-
-.section-heading.center{
-margin-left:auto;
-margin-right:auto;
-text-align:center;
-}
-
-.eyebrow{
-color:var(--green);
-font-size:12px;
-font-weight:900;
-letter-spacing:2px;
-text-transform:uppercase;
+h1,h2,h3{
+  line-height:1.12;
 }
 
 h2{
-font-size:clamp(34px,5vw,50px);
-line-height:1.08;
-margin:12px 0;
-letter-spacing:-1.5px;
+  font-size:clamp(30px,4vw,46px);
 }
 
-.section-heading p{
-color:var(--muted);
-font-size:17px;
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:20;
+  background:rgba(2,13,11,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(0,232,138,.18);
 }
 
-/* FEATURE CARDS */
-
-.features{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
+.nav{
+  height:72px;
+  display:flex;
+  align-items:center;
+  gap:28px;
 }
 
-.feature{
-background:linear-gradient(145deg,#0e1927,#09111b);
-border:1px solid var(--border);
-border-radius:17px;
-padding:28px;
-transition:.3s;
+.logo{
+  font-weight:1000;
+  color:#fff;
+  letter-spacing:-1px;
+  line-height:.9;
+  font-size:24px;
+  white-space:nowrap;
 }
 
-.feature:hover{
-transform:translateY(-7px);
-border-color:#2c7258;
-box-shadow:0 20px 45px rgba(0,0,0,.35);
+.logo span{
+  color:var(--green);
 }
 
-.feature-icon{
-width:54px;
-height:54px;
-border-radius:14px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#0d2a21;
-border:1px solid #1d5946;
-font-size:25px;
-margin-bottom:20px;
+.logo small{
+  display:block;
+  font-size:10px;
+  letter-spacing:2px;
+  color:#fff;
 }
 
-.feature h3{
-font-size:19px;
-margin-bottom:9px;
+.navlinks{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  margin-left:auto;
 }
 
-.feature p{
-color:var(--muted);
-font-size:14px;
+.navlinks a{
+  font-size:13px;
+  color:#e8f0ed;
+  font-weight:700;
 }
 
-/* ABOUT */
+.navlinks a:hover,
+.navlinks .active{
+  color:var(--green);
+}
+
+.nav-email{
+  font-size:12px;
+  color:#d6e2df;
+}
+
+.menu{
+  display:none;
+  color:#fff;
+  font-size:28px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:720px;
+  padding:145px 0 65px;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(1,13,10,.98) 0%,
+    rgba(2,20,15,.88) 45%,
+    rgba(1,14,12,.48) 100%
+  ),
+  url("https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1800&q=85")
+  center/cover;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:180px;
+  background:linear-gradient(transparent,var(--dark));
+}
+
+.hero .container{
+  position:relative;
+  z-index:2;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:45px;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:clamp(42px,6vw,78px);
+  margin:16px 0 14px;
+  max-width:760px;
+}
+
+.hero h1 span{
+  color:var(--green);
+}
+
+.hero h3{
+  font-size:22px;
+  margin-bottom:14px;
+}
+
+.hero p{
+  font-size:17px;
+  color:#d2ddda;
+  max-width:640px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:16px;
+  margin:30px 0;
+}
+
+.market-icons{
+  display:flex;
+  gap:30px;
+  margin-top:28px;
+  flex-wrap:wrap;
+}
+
+.market-icons div{
+  font-size:12px;
+  text-align:center;
+  color:#dbe6e3;
+}
+
+.market-icons b{
+  display:block;
+  color:var(--green);
+  font-size:22px;
+  margin-bottom:2px;
+}
+
+.hero-card{
+  border:1px solid rgba(0,232,138,.55);
+  background:rgba(0,20,15,.62);
+  backdrop-filter:blur(10px);
+  padding:25px;
+  border-radius:15px;
+  max-width:360px;
+  margin-left:auto;
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.hero-card strong{
+  display:block;
+  color:var(--green);
+  font-size:22px;
+}
+
+.chart{
+  height:160px;
+  margin:20px 0 5px;
+  position:relative;
+  border-bottom:1px solid rgba(255,255,255,.15);
+  overflow:hidden;
+}
+
+.chart svg{
+  width:100%;
+  height:100%;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+section{
+  padding:85px 0;
+}
+
+.about{
+  background:#fff;
+}
 
 .about-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
 }
 
-.about-card{
-background:linear-gradient(145deg,#101d2b,#08111b);
-border:1px solid var(--border);
-border-radius:20px;
-padding:35px;
+.about-img{
+  min-height:360px;
+  border-radius:14px;
+
+  background:
+  linear-gradient(0deg,rgba(0,0,0,.55),transparent 60%),
+  url("https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1200&q=85")
+  center/cover;
+
+  position:relative;
+  overflow:hidden;
 }
 
-.about-card p{
-color:var(--muted);
-margin:15px 0;
+.about-img .badge{
+  position:absolute;
+  left:24px;
+  bottom:24px;
+  color:#fff;
+  font-size:25px;
+  font-weight:900;
 }
 
-.experience{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-margin-top:25px;
+.about p{
+  color:#52605c;
+  margin:18px 0;
 }
 
-.experience-box{
-padding:20px;
-background:#07101a;
-border:1px solid var(--border);
-border-radius:12px;
+.checks{
+  display:grid;
+  gap:12px;
+  margin:20px 0;
 }
 
-.experience-box strong{
-font-size:30px;
-color:var(--green);
-display:block;
+.check{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-weight:700;
 }
 
-.experience-box span{
-font-size:11px;
-color:var(--muted);
-text-transform:uppercase;
+.check i{
+  width:21px;
+  height:21px;
+  background:var(--green);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-style:normal;
+  font-size:13px;
 }
 
-/* EDUCATION */
-
-.education{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
+.signature{
+  font-family:cursive;
+  font-size:31px;
+  margin-top:25px;
 }
 
-.education-card{
-padding:30px;
-border:1px solid var(--border);
-background:#0b1521;
-border-radius:17px;
-position:relative;
-overflow:hidden;
+
+/* =========================
+   EDUCATION MODULES
+========================= */
+
+.modules{
+  background:linear-gradient(135deg,#02130f,#06251c);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
 }
 
-.education-card:after{
-content:"";
-position:absolute;
-right:-50px;
-bottom:-70px;
-width:170px;
-height:170px;
-border-radius:50%;
-background:#27e39a0c;
+.modules:after{
+  content:"";
+  position:absolute;
+  width:550px;
+  height:250px;
+  right:-120px;
+  bottom:-100px;
+  border:2px solid rgba(0,232,138,.25);
+  border-radius:50%;
+  transform:rotate(-12deg);
 }
 
-.education-card .number{
-font-size:12px;
-font-weight:900;
-color:var(--green);
-letter-spacing:2px;
+.modules-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:55px;
+  align-items:center;
 }
 
-.education-card h3{
-margin:8px 0;
-font-size:21px;
+.modules p{
+  color:#b8c8c4;
+  margin:18px 0 25px;
 }
 
-.education-card p{
-color:var(--muted);
-font-size:14px;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
 }
 
-/* ROADMAP */
-
-.roadmap{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-counter-reset:road;
+.card{
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:10px;
+  padding:22px;
+  background:rgba(255,255,255,.025);
 }
 
-.roadmap-card{
-border:1px solid var(--border);
-background:#09131e;
-border-radius:15px;
-padding:25px;
+.card .icon{
+  color:var(--green);
+  font-size:27px;
+  margin-bottom:12px;
 }
 
-.roadmap-number{
-color:var(--green);
-font-weight:900;
-font-size:12px;
+.card h3{
+  font-size:14px;
+  text-transform:uppercase;
 }
 
-.roadmap-card h3{
-margin:9px 0;
+.card p{
+  font-size:12px;
+  margin:8px 0 0;
+  color:#9eafaa;
 }
 
-.roadmap-card p{
-font-size:13px;
-color:var(--muted);
+
+/* =========================
+   SPECIALISED AREAS
+========================= */
+
+.special{
+  background:#f7faf9;
 }
 
-/* COACHING */
-
-.coaching{
-background:
-radial-gradient(circle at 50% 0%,rgba(39,227,154,.13),transparent 40%),
-linear-gradient(145deg,#0a1816,#08111b);
-border:1px solid #245542;
-border-radius:25px;
-padding:65px 35px;
+.special h2{
+  text-align:center;
+  margin:10px 0 45px;
 }
 
-.coaching-content{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:45px;
-align-items:center;
+.special-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:0;
 }
 
-.coaching p{
-color:var(--muted);
+.special-item{
+  text-align:center;
+  padding:8px 18px;
+  border-right:1px solid #cfdad6;
 }
 
-.coaching-list{
-list-style:none;
-margin-top:20px;
+.special-item:last-child{
+  border:0;
 }
 
-.coaching-list li{
-margin:10px 0;
-color:#cbd6e2;
+.special-item .big{
+  font-size:31px;
+  color:#00b96d;
+  margin-bottom:12px;
 }
 
-.coaching-list li:before{
-content:"✓";
-color:var(--green);
-font-weight:bold;
-margin-right:10px;
+.special-item h3{
+  font-size:14px;
+  margin-bottom:8px;
 }
 
-.price-card{
-background:#071019;
-border:1px solid #2c4b5c;
-border-radius:18px;
-padding:30px;
-box-shadow:0 20px 50px rgba(0,0,0,.35);
+.special-item p{
+  font-size:12px;
+  color:#65716e;
 }
 
-.price-card .label{
-font-size:11px;
-color:var(--green);
-font-weight:bold;
-letter-spacing:1px;
+
+/* =========================
+   TRADING JOURNEY
+========================= */
+
+.journey{
+  background:linear-gradient(90deg,#02150f,#043523);
+  color:#fff;
+  overflow:hidden;
 }
 
-.price-card h3{
-font-size:26px;
-margin:8px 0;
+.journey-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
 }
 
-.price-card p{
-font-size:13px;
+.road{
+  height:300px;
+  border-radius:15px;
+
+  background:
+  linear-gradient(0deg,rgba(0,30,20,.55),rgba(0,30,20,.1)),
+  url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85")
+  center/cover;
+
+  display:grid;
+  place-items:end center;
+  padding-bottom:25px;
 }
 
-/* TESTIMONIALS */
-
-.testimonials{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
+.steps{
+  display:flex;
+  gap:10px;
+  flex-direction:column;
+  width:210px;
+  text-align:center;
 }
 
-.testimonial{
-background:#0b1520;
-border:1px solid var(--border);
-border-radius:16px;
-padding:25px;
+.steps span{
+  padding:9px;
+  border-radius:4px;
+  background:rgba(0,232,138,.75);
+  font-weight:900;
+  color:#00160f;
+}
+
+.quote{
+  border:1px solid rgba(0,232,138,.45);
+  padding:28px;
+  border-radius:14px;
+  background:rgba(0,0,0,.18);
+  margin-top:25px;
+}
+
+.quote p{
+  font-size:15px;
+  color:#d8e4e0;
+}
+
+.quote strong{
+  display:block;
+  margin-top:15px;
 }
 
 .stars{
-color:var(--gold);
-letter-spacing:3px;
-margin-bottom:13px;
+  color:#00a963;
+  letter-spacing:2px;
 }
 
-.testimonial p{
-color:#b9c5d2;
-font-size:14px;
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials{
+  background:#fff;
 }
 
-.testimonial strong{
-display:block;
-margin-top:18px;
-font-size:13px;
+.testimonials h2{
+  margin:10px 0 35px;
 }
 
-/* FAQ */
+.test-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.test{
+  border:1px solid #dce6e2;
+  border-radius:12px;
+  padding:22px;
+  box-shadow:0 5px 18px rgba(0,0,0,.04);
+}
+
+.avatar{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#0a2b21,#00c878);
+  margin-bottom:15px;
+}
+
+
+/* =========================
+   FAQ + CONTACT
+========================= */
+
+.bottom{
+  background:#f6f9f8;
+}
+
+.bottom-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:35px;
+}
 
 .faq{
-max-width:850px;
-margin:auto;
+  display:grid;
+  gap:8px;
 }
 
 details{
-border:1px solid var(--border);
-background:#09131e;
-border-radius:11px;
-margin-bottom:10px;
-padding:18px 20px;
+  border:1px solid #d8e3df;
+  border-radius:8px;
+  padding:14px;
+  background:#fff;
 }
 
 summary{
-cursor:pointer;
-font-weight:bold;
-}
-
-details p{
-color:var(--muted);
-padding-top:12px;
-font-size:14px;
-}
-
-/* CONTACT */
-
-.contact-box{
-background:
-radial-gradient(circle at 50% 0%,rgba(39,227,154,.16),transparent 45%),
-#09151d;
-border:1px solid #285844;
-border-radius:24px;
-padding:60px 25px;
-text-align:center;
-}
-
-.contact-box p{
-max-width:650px;
-margin:10px auto;
-color:var(--muted);
+  font-weight:800;
+  cursor:pointer;
 }
 
 .contact-form{
-max-width:700px;
-margin:30px auto 0;
-display:grid;
-gap:13px;
-text-align:left;
+  display:grid;
+  gap:10px;
 }
 
-.contact-form input,
-.contact-form textarea,
-.contact-form select{
-width:100%;
-padding:14px;
-border:1px solid var(--border);
-background:#050c14;
-border-radius:9px;
-color:white;
-font-family:inherit;
-font-size:14px;
-outline:none;
+input,
+textarea{
+  width:100%;
+  border:1px solid #ccd8d4;
+  border-radius:7px;
+  padding:12px;
+  font:inherit;
 }
 
-.contact-form textarea{
-min-height:130px;
-resize:vertical;
+textarea{
+  min-height:100px;
+  resize:vertical;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form select:focus{
-border-color:var(--green);
-}
 
-.contact-form button{
-border:0;
-cursor:pointer;
-font-family:inherit;
-}
-
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-border-top:1px solid var(--border);
-background:#04070c;
-padding:45px 25px;
+  background:#02100d;
+  color:#fff;
+  padding:45px 0 20px;
+  border-top:1px solid rgba(0,232,138,.25);
 }
 
-.footer-inner{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:1.5fr 1fr 1fr;
-gap:35px;
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr 1fr;
+  gap:30px;
 }
 
-footer h3{
-margin-bottom:12px;
+footer h4{
+  margin-bottom:13px;
 }
 
-footer p,
-footer a{
-color:var(--muted);
-font-size:13px;
-text-decoration:none;
+footer a,
+footer p{
+  display:block;
+  color:#aabbb6;
+  font-size:13px;
+  margin:7px 0;
 }
 
-footer a{
-display:block;
-margin:5px 0;
+.footer-brand{
+  font-size:30px;
+  font-weight:1000;
 }
 
-.footer-bottom{
-max-width:1200px;
-margin:30px auto 0;
-padding-top:20px;
-border-top:1px solid #142231;
-color:#607084;
-font-size:11px;
+.footer-brand span{
+  color:var(--green);
 }
 
-/* DISCLAIMER */
-
-.disclaimer{
-max-width:900px;
-margin:0 auto;
-padding:25px;
-text-align:center;
-color:#68788b;
-font-size:11px;
+.warning{
+  border-top:1px solid rgba(255,255,255,.12);
+  margin-top:30px;
+  padding-top:16px;
+  font-size:10px;
+  color:#7f918c;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
 }
 
-/* MOBILE */
+
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:900px){
 
-.nav-links{
-display:none;
+  .navlinks,
+  .nav-email{
+    display:none;
+  }
+
+  .menu{
+    display:block;
+    margin-left:auto;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .modules-grid,
+  .journey-grid,
+  .bottom-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    min-height:auto;
+    padding-bottom:85px;
+  }
+
+  .hero-card{
+    margin:10px 0 0;
+  }
+
+  .cards{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .special-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+  }
+
+  .special-item{
+    border:0;
+  }
+
+  .test-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
 }
 
-.hero{
-grid-template-columns:1fr;
-padding-top:65px;
-}
 
-.about-grid,
-.coaching-content{
-grid-template-columns:1fr;
-}
+/* =========================
+   MOBILE
+========================= */
 
-.features,
-.testimonials{
-grid-template-columns:1fr 1fr;
-}
+@media(max-width:560px){
 
-.roadmap{
-grid-template-columns:1fr 1fr;
-}
+  section{
+    padding:60px 0;
+  }
 
-.trust{
-grid-template-columns:1fr 1fr;
-}
+  .hero h1{
+    font-size:43px;
+  }
 
-.footer-inner{
-grid-template-columns:1fr 1fr;
-}
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
 
-}
+  .cards{
+    grid-template-columns:1fr;
+  }
 
-@media(max-width:600px){
+  .special-grid{
+    grid-template-columns:1fr 1fr;
+  }
 
-.hero h1{
-font-size:45px;
-letter-spacing:-2px;
-}
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
 
-.hero{
-padding-left:18px;
-padding-right:18px;
-}
-
-section{
-padding:65px 18px;
-}
-
-.features,
-.education,
-.testimonials,
-.roadmap,
-.trust{
-grid-template-columns:1fr;
-}
-
-.experience{
-grid-template-columns:1fr;
-}
-
-.screen-bottom{
-grid-template-columns:1fr;
-}
-
-.footer-inner{
-grid-template-columns:1fr;
-}
-
-.trading-screen{
-padding:12px;
-}
+  .warning{
+    flex-direction:column;
+  }
 
 }
 
 </style>
 </head>
 
+
 <body>
 
-<div class="topbar">
-<strong>GPS TRADING ACADEMY</strong> • Practical Trading Education • One-to-One Coaching • 20+ Years Experience
-</div>
 
-<nav>
+<!-- =========================
+     HEADER
+========================= -->
 
-<div class="nav-container">
+<header>
 
-<div class="logo">
-GPS <span>TRADING</span> ACADEMY
-</div>
+<div class="container nav">
 
-<div class="nav-links">
-
-<a href="#learn">Learn</a>
-<a href="#education">Education</a>
-<a href="#coaching">Coaching</a>
-<a href="#about">About</a>
-<a href="#faq">FAQ</a>
-
-<a class="nav-button" href="#contact">
-Get Started
+<a class="logo" href="#home">
+GPS<span>↗</span>
+<small>TRADING ACADEMY</small>
 </a>
 
-</div>
+<nav class="navlinks">
 
-</div>
+<a class="active" href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#courses">Courses</a>
+<a href="#education">Education</a>
+<a href="#coaching">Coaching</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
 
 </nav>
 
-
-<!-- HERO -->
-
-<header class="hero">
-
-<div>
-
-<div class="hero-badge">
-20+ YEARS OF FINANCIAL TRADING EXPERIENCE
-</div>
-
-<h1>
-Learn to trade with
-<span>knowledge.</span>
-</h1>
-
-<p class="hero-description">
-
-Stop guessing.
-Start understanding the markets.
-
-GPS Trading Academy provides practical education and
-one-to-one coaching designed to help you understand
-<strong>forex, charts, technical analysis, risk management
-and trading psychology.</strong>
-
-</p>
-
-<div class="hero-buttons">
+<span class="nav-email">
+✉ gsmit0487@gmail.com
+</span>
 
 <a class="btn btn-primary" href="#contact">
-START YOUR JOURNEY →
+Get Started
 </a>
 
-<a class="btn btn-secondary" href="#education">
-EXPLORE THE ACADEMY
-</a>
-
-</div>
-
-<div class="hero-stats">
-
-<div class="stat">
-<strong>20+</strong>
-<span>Years Experience</span>
-</div>
-
-<div class="stat">
-<strong>1-to-1</strong>
-<span>Personal Coaching</span>
-</div>
-
-<div class="stat">
-<strong>100%</strong>
-<span>Education Focused</span>
-</div>
-
-</div>
-
-</div>
-
-
-<!-- TRADING VISUAL -->
-
-<div class="trading-screen">
-
-<div class="screen-header">
-
-<div class="market-name">
-EUR / USD
-<small>FOREX • 1 HOUR</small>
-</div>
-
-<div class="market-price">
-1.0842
-</div>
-
-</div>
-
-
-<div class="chart">
-
-<svg viewBox="0 0 600 290" preserveAspectRatio="none">
-
-<defs>
-
-<linearGradient id="area" x1="0" x2="0" y1="0" y2="1">
-
-<stop offset="0%" stop-color="#27e39a" stop-opacity=".22"/>
-<stop offset="100%" stop-color="#27e39a" stop-opacity="0"/>
-
-</linearGradient>
-
-</defs>
-
-<path
-d="M0 230
-C30 215 45 235 70 210
-S115 175 135 190
-S175 160 195 175
-S225 135 250 150
-S285 105 310 125
-S345 95 365 110
-S400 75 425 95
-S455 55 480 70
-S510 45 535 55
-S565 25 600 40
-L600 290
-L0 290 Z"
-fill="url(#area)"
-/>
-
-<path
-d="M0 230
-C30 215 45 235 70 210
-S115 175 135 190
-S175 160 195 175
-S225 135 250 150
-S285 105 310 125
-S345 95 365 110
-S400 75 425 95
-S455 55 480 70
-S510 45 535 55
-S565 25 600 40"
-fill="none"
-stroke="#27e39a"
-stroke-width="3"
-/>
-
-</svg>
-
-</div>
-
-
-<div class="screen-bottom">
-
-<div class="metric">
-<small>TREND</small>
-<strong class="green">BULLISH</strong>
-</div>
-
-<div class="metric">
-<small>SUPPORT</small>
-<strong>1.0780</strong>
-</div>
-
-<div class="metric">
-<small>RESISTANCE</small>
-<strong>1.0900</strong>
-</div>
-
-</div>
+<span class="menu">
+☰
+</span>
 
 </div>
 
 </header>
 
 
-<!-- TRUST -->
 
-<div class="trust">
-
-<div class="trust-item">
-<strong>Forex</strong>
-<span>Currency Markets</span>
-</div>
-
-<div class="trust-item">
-<strong>Technical Analysis</strong>
-<span>Charts & Price Action</span>
-</div>
-
-<div class="trust-item">
-<strong>Risk Management</strong>
-<span>Protect Your Capital</span>
-</div>
-
-<div class="trust-item">
-<strong>Trading Psychology</strong>
-<span>Discipline & Process</span>
-</div>
-
-</div>
+<main>
 
 
-<!-- WHAT YOU LEARN -->
+<!-- =========================
+     HERO
+========================= -->
 
-<section id="learn">
+<section class="hero" id="home">
 
-<div class="section-heading">
-
-<div class="eyebrow">
-THE GPS APPROACH
-</div>
-
-<h2>
-Learn the skills behind the trade.
-</h2>
-
-<p>
-Trading is more than finding an entry. Learn how markets
-move, how to analyse opportunities and how disciplined
-risk management fits into the process.
-</p>
-
-</div>
-
-
-<div class="features">
-
-<div class="feature">
-
-<div class="feature-icon">
-📈
-</div>
-
-<h3>Market Analysis</h3>
-
-<p>
-Learn how to read charts and identify trends, support,
-resistance and potential market structure.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-🕯️
-</div>
-
-<h3>Candlestick Patterns</h3>
-
-<p>
-Understand how candlesticks represent price behaviour
-and how traders use price action as part of their analysis.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-🎯
-</div>
-
-<h3>Trading Strategy</h3>
-
-<p>
-Develop a structured process for analysing a setup before
-making a trading decision.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-🛡️
-</div>
-
-<h3>Risk Management</h3>
-
-<p>
-Understand position sizing, stop-loss planning and why
-risk management is fundamental to trading.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-🧠
-</div>
-
-<h3>Trading Psychology</h3>
-
-<p>
-Learn about discipline, patience and the emotional side
-of making decisions in financial markets.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-📋
-</div>
-
-<h3>Trading Plans</h3>
-
-<p>
-Build a repeatable trading routine so your decisions are
-based on a defined process rather than emotion.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<div class="about-grid">
+<div class="container hero-grid">
 
 <div>
 
-<div class="eyebrow">
-ABOUT GPS TRADING
+<div class="section-label">
+LEARN &nbsp;|&nbsp; PRACTICE &nbsp;|&nbsp; TRADE &nbsp;|&nbsp; GROW
 </div>
 
-<h2>
-Experience matters.
-Preparation matters more.
-</h2>
-
-<p style="color:var(--muted);margin-top:18px">
-
-GPS Trading Academy was created to provide practical,
-straightforward trading education based on more than
-20 years of financial trading experience.
-
-</p>
-
-<p style="color:var(--muted);margin-top:15px">
-
-The focus is education: helping you understand the
-markets, develop a process and learn how to manage risk.
-
-</p>
-
-<div class="experience">
-
-<div class="experience-box">
-<strong>20+</strong>
-<span>Years Trading Experience</span>
-</div>
-
-<div class="experience-box">
-<strong>1:1</strong>
-<span>Personal Coaching</span>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="about-card">
-
-<div class="eyebrow">
-THE GPS PRINCIPLE
-</div>
-
-<h2 style="font-size:31px">
-Understand before you trade.
-</h2>
-
-<p>
-A good trader does not simply look for a signal.
-They understand the context surrounding the market.
-</p>
-
-<p>
-GPS Trading focuses on education, preparation,
-risk awareness and developing your own understanding.
-</p>
-
-<a class="btn btn-primary" href="#contact">
-TALK TO GPS TRADING
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- EDUCATION -->
-
-<section id="education">
-
-<div class="section-heading center">
-
-<div class="eyebrow">
-THE ACADEMY
-</div>
-
-<h2>
-A complete trading education.
-</h2>
-
-<p>
-Build your knowledge step-by-step, from the fundamentals
-through to developing your own structured approach.
-</p>
-
-</div>
-
-
-<div class="education">
-
-<div class="education-card">
-
-<div class="number">
-MODULE 01
-</div>
-
-<h3>Forex Fundamentals</h3>
-
-<p>
-Understand currency pairs, pips, spreads, leverage,
-market sessions and the basic mechanics of forex trading.
-</p>
-
-</div>
-
-
-<div class="education-card">
-
-<div class="number">
-MODULE 02
-</div>
-
-<h3>Reading Charts</h3>
-
-<p>
-Learn how to read price charts and understand trends,
-ranges, support, resistance and market structure.
-</p>
-
-</div>
-
-
-<div class="education-card">
-
-<div class="number">
-MODULE 03
-</div>
-
-<h3>Candlestick Analysis</h3>
-
-<p>
-Study common candlestick formations and learn how
-price action can provide useful market information.
-</p>
-
-</div>
-
-
-<div class="education-card">
-
-<div class="number">
-MODULE 04
-</div>
-
-<h3>Technical Analysis</h3>
-
-<p>
-Explore indicators, trend analysis, support and resistance
-and different approaches to technical market analysis.
-</p>
-
-</div>
-
-
-<div class="education-card">
-
-<div class="number">
-MODULE 05
-</div>
-
-<h3>Risk Management</h3>
-
-<p>
-Understand why risk control is one of the most important
-parts of developing a sustainable trading process.
-</p>
-
-</div>
-
-
-<div class="education-card">
-
-<div class="number">
-MODULE 06
-</div>
-
-<h3>Trading Psychology</h3>
-
-<p>
-Explore discipline, patience, consistency and the
-psychological challenges traders can experience.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ROADMAP -->
-
-<section>
-
-<div class="section-heading">
-
-<div class="eyebrow">
-YOUR ROADMAP
-</div>
-
-<h2>
-From beginner to confident decision-maker.
-</h2>
-
-<p>
-A structured learning journey designed to help you
-build knowledge progressively.
-</p>
-
-</div>
-
-
-<div class="roadmap">
-
-<div class="roadmap-card">
-
-<div class="roadmap-number">
-01 • FOUNDATION
-</div>
-
-<h3>Understand</h3>
-
-<p>
-Learn the language of financial markets and understand
-how price charts work.
-</p>
-
-</div>
-
-
-<div class="roadmap-card">
-
-<div class="roadmap-number">
-02 • ANALYSIS
-</div>
-
-<h3>Analyse</h3>
-
-<p>
-Study trends, market structure, candlesticks and
-technical analysis.
-</p>
-
-</div>
-
-
-<div class="roadmap-card">
-
-<div class="roadmap-number">
-03 • STRATEGY
-</div>
-
-<h3>Plan</h3>
-
-<p>
-Develop rules for identifying and evaluating potential
-trading opportunities.
-</p>
-
-</div>
-
-
-<div class="roadmap-card">
-
-<div class="roadmap-number">
-04 • DISCIPLINE
-</div>
-
-<h3>Improve</h3>
-
-<p>
-Review your decisions, manage risk and continually
-refine your trading process.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- COACHING -->
-
-<section id="coaching">
-
-<div class="coaching">
-
-<div class="coaching-content">
-
-<div>
-
-<div class="eyebrow">
-ONE-TO-ONE COACHING
-</div>
-
-<h2>
-Your goals. Your questions. Your learning plan.
-</h2>
-
-<p>
-One-to-one coaching gives you the opportunity to work
-directly with an experienced trader and focus on the areas
-where you need the most help.
-</p>
-
-<ul class="coaching-list">
-
-<li>Personalised trading education</li>
-<li>Chart and market analysis</li>
-<li>Strategy development</li>
-<li>Risk management guidance</li>
-<li>Trading psychology and discipline</li>
-<li>Questions answered directly</li>
-
-</ul>
-
-<a class="btn btn-primary" href="#contact">
-ENQUIRE ABOUT COACHING
-</a>
-
-</div>
-
-
-<div class="price-card">
-
-<div class="label">
-GPS TRADING COACHING
-</div>
+<h1>
+GPS <span>TRADING ACADEMY</span>
+</h1>
 
 <h3>
-Personal Trading Development
+Professional Trading Education for a Stronger Financial Future
 </h3>
 
 <p>
-A focused coaching experience designed around your
-current knowledge and the areas you want to develop.
+Learn proven trading strategies, build your skills and gain the confidence to trade the global markets. With over 20 years of trading experience, GPS Trading Academy gives you the knowledge, tools and support to help you achieve your financial goals.
 </p>
 
-<div style="margin:22px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 0">
+<div class="hero-actions">
 
-<strong style="font-size:15px;color:white">
-What we can work on
-</strong>
+<a class="btn btn-primary" href="#courses">
+Start Your Trading Journey →
+</a>
 
-<p style="margin-top:8px">
-Charts • Forex • Price Action • Strategy • Risk • Psychology
-</p>
-
-</div>
-
-<a class="btn btn-primary" href="#contact">
-ASK ABOUT 1-TO-1
+<a class="btn btn-outline" href="#education">
+Explore Our Courses
 </a>
 
 </div>
 
+
+<div class="market-icons">
+
+<div>
+<b>↗</b>
+Forex
+</div>
+
+<div>
+<b>▥</b>
+Stocks
+</div>
+
+<div>
+<b>⌁</b>
+Indices
+</div>
+
+<div>
+<b>◆</b>
+Commodities
+</div>
+
+<div>
+<b>₿</b>
+Crypto
+</div>
+
+</div>
+
+</div>
+
+
+<div>
+
+<div class="hero-card">
+
+<strong>
+Better Education<br>
+Better Decisions<br>
+Better Results
+</strong>
+
+<div class="chart">
+
+<svg viewBox="0 0 400 160" preserveAspectRatio="none">
+
+<polyline
+fill="none"
+stroke="#00e88a"
+stroke-width="4"
+points="
+0,140
+35,128
+55,138
+80,100
+110,112
+140,70
+170,90
+205,55
+240,76
+275,38
+300,52
+335,20
+370,30
+400,5
+"/>
+
+<polyline
+fill="none"
+stroke="rgba(255,255,255,.2)"
+stroke-width="1"
+points="
+0,40
+400,40
+M0,90
+400,90
+M0,140
+400,140
+"/>
+
+</svg>
+
+</div>
+
+<small>
+Build knowledge. Build discipline. Build your trading future.
+</small>
+
+</div>
+
 </div>
 
 </div>
@@ -1609,81 +975,71 @@ ASK ABOUT 1-TO-1
 </section>
 
 
-<!-- TESTIMONIAL STYLE -->
 
-<section>
+<!-- =========================
+     ABOUT
+========================= -->
 
-<div class="section-heading center">
+<section class="about" id="about">
 
-<div class="eyebrow">
-THE EXPERIENCE
+<div class="container about-grid">
+
+<div class="about-img">
+
+<div class="badge">
+20+ YEARS<br>
+TRADING EXPERIENCE
+</div>
+
+</div>
+
+
+<div>
+
+<div class="section-label">
+ABOUT GPS TRADING ACADEMY
 </div>
 
 <h2>
-Education built around you.
+Over 20 Years of Trading Experience
 </h2>
 
 <p>
-The aim is not to promise easy money. The aim is to help
-you understand what you are doing and why.
+I’m <u>G Smith</u>, the founder of GPS Trading Academy. With over 20 years of hands-on trading experience across multiple markets, I’ve developed a practical approach to help traders of all levels succeed.
 </p>
 
+
+<div class="checks">
+
+<div class="check">
+<i>✓</i>
+20+ years of professional trading experience
 </div>
 
-
-<div class="testimonials">
-
-<div class="testimonial">
-
-<div class="stars">
-★★★★★
+<div class="check">
+<i>✓</i>
+Real-world strategies, not just theory
 </div>
 
-<p>
-“Clear explanations, practical chart work and a much better
-understanding of what I should be looking for before entering
-a trade.”
-</p>
-
-<strong>
-GPS Trading Student
-</strong>
-
+<div class="check">
+<i>✓</i>
+Simple, easy-to-follow education
 </div>
 
-
-<div class="testimonial">
-
-<div class="stars">
-★★★★★
+<div class="check">
+<i>✓</i>
+Ongoing support and guidance
 </div>
-
-<p>
-“The biggest difference was learning to have a plan instead
-of making decisions emotionally.”
-</p>
-
-<strong>
-GPS Trading Student
-</strong>
 
 </div>
 
-
-<div class="testimonial">
-
-<div class="stars">
-★★★★★
+<div class="signature">
+G Smith
 </div>
 
-<p>
-“Having someone explain the charts step-by-step made the
-learning process much easier to understand.”
-</p>
-
-<strong>
-GPS Trading Student
-</strong>
+<b>
+✉ &nbsp; gsmit0487@gmail.com
+</b>
 
 </div>
 
@@ -1692,21 +1048,456 @@ GPS Trading Student
 </section>
 
 
-<!-- FAQ -->
 
-<section id="faq">
+<!-- =========================
+     EDUCATION
+========================= -->
 
-<div class="section-heading center">
+<section class="modules" id="education">
 
-<div class="eyebrow">
-QUESTIONS
+<div class="container modules-grid">
+
+<div>
+
+<div class="section-label">
+THE GPS TRADING ACADEMY
 </div>
 
 <h2>
-Frequently asked questions.
+Our Education Modules
 </h2>
 
+<p>
+A complete, structured learning path designed to take you from beginner to confident, independent trader.
+</p>
+
+<a class="btn btn-primary" href="#courses">
+View All Courses →
+</a>
+
 </div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<div class="icon">
+◈
+</div>
+
+<h3>
+1. Forex Education
+</h3>
+
+<p>
+Master the world's largest market.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+▥
+</div>
+
+<h3>
+2. Candlestick Education
+</h3>
+
+<p>
+Read the charts like a pro.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+▤
+</div>
+
+<h3>
+3. Technical Analysis
+</h3>
+
+<p>
+Identify trends and key levels.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+⌁
+</div>
+
+<h3>
+4. Trading Strategies
+</h3>
+
+<p>
+Proven approaches for disciplined trading.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+◉
+</div>
+
+<h3>
+5. Risk Management
+</h3>
+
+<p>
+Protect your capital and trade longer.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+◷
+</div>
+
+<h3>
+6. Trading Psychology
+</h3>
+
+<p>
+Build discipline and a winning mindset.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     SPECIALISED AREAS
+========================= -->
+
+<section class="special" id="courses">
+
+<div class="container">
+
+<div class="section-label" style="text-align:center">
+WHAT YOU WILL LEARN
+</div>
+
+<h2>
+Specialised Education Areas
+</h2>
+
+
+<div class="special-grid">
+
+
+<div class="special-item">
+
+<div class="big">$</div>
+
+<h3>
+Forex Trading
+</h3>
+
+<p>
+Learn how to trade the FX market with confidence.
+</p>
+
+</div>
+
+
+<div class="special-item">
+
+<div class="big">
+▥
+</div>
+
+<h3>
+Candlestick Patterns
+</h3>
+
+<p>
+Understand price action and market psychology.
+</p>
+
+</div>
+
+
+<div class="special-item">
+
+<div class="big">
+↗
+</div>
+
+<h3>
+Technical Analysis
+</h3>
+
+<p>
+Use indicators, trends and key levels effectively.
+</p>
+
+</div>
+
+
+<div class="special-item">
+
+<div class="big">
+◎
+</div>
+
+<h3>
+Trading Strategies
+</h3>
+
+<p>
+Systematic approaches for consistent results.
+</p>
+
+</div>
+
+
+<div class="special-item">
+
+<div class="big">
+⬡
+</div>
+
+<h3>
+Risk Management
+</h3>
+
+<p>
+Protect your capital and manage risk.
+</p>
+
+</div>
+
+
+<div class="special-item">
+
+<div class="big">
+♟
+</div>
+
+<h3>
+Trading Psychology
+</h3>
+
+<p>
+Control emotions and trade with discipline.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     TRADING JOURNEY
+========================= -->
+
+<section class="journey" id="coaching">
+
+<div class="container journey-grid">
+
+
+<div class="road">
+
+<div class="steps">
+
+<span>
+PLAN
+</span>
+
+<span>
+PRACTICE
+</span>
+
+<span>
+IMPROVE
+</span>
+
+<span>
+PROFIT
+</span>
+
+</div>
+
+</div>
+
+
+<div>
+
+<div class="section-label">
+YOUR TRADING JOURNEY
+</div>
+
+<h2>
+From Beginner to Confident Trader
+</h2>
+
+<p style="color:#b9cbc5;margin:18px 0 25px">
+
+A clear path built around education, practice, discipline and continuous improvement.
+
+</p>
+
+<a class="btn btn-primary" href="#contact">
+View Learning Roadmap →
+</a>
+
+
+<div class="quote">
+
+<p>
+“GPS Trading Academy gave me the structure and support I needed. The courses are clear, practical and easy to follow. I’ve gained real confidence in my trading.”
+</p>
+
+<strong>
+— James T.
+</strong>
+
+<div class="stars">
+★★★★★
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     TESTIMONIALS
+========================= -->
+
+<section class="testimonials" id="testimonials">
+
+<div class="container">
+
+<div class="section-label">
+REAL EXPERIENCES
+</div>
+
+<h2>
+What Our Students Say
+</h2>
+
+
+<div class="test-grid">
+
+
+<div class="test">
+
+<div class="avatar"></div>
+
+<p>
+“The education and support at GPS Trading Academy is outstanding. I’ve learned so much and my trading has improved massively.”
+</p>
+
+<strong>
+— Sarah L.
+</strong>
+
+<div class="stars">
+★★★★★
+</div>
+
+</div>
+
+
+<div class="test">
+
+<div class="avatar"></div>
+
+<p>
+“Clear, simple and practical training. The risk management and psychology sections alone are worth the price.”
+</p>
+
+<strong>
+— Mark D.
+</strong>
+
+<div class="stars">
+★★★★★
+</div>
+
+</div>
+
+
+<div class="test">
+
+<div class="avatar"></div>
+
+<p>
+“The one-to-one coaching is excellent. I now have a solid trading plan and feel confident in my decisions.”
+</p>
+
+<strong>
+— Emma R.
+</strong>
+
+<div class="stars">
+★★★★★
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FAQ + CONTACT
+========================= -->
+
+<section class="bottom" id="faq">
+
+<div class="container bottom-grid">
+
+
+<div>
+
+<div class="section-label">
+FAQ
+</div>
+
+<h2 style="font-size:34px;margin:8px 0 20px">
+Frequently Asked Questions
+</h2>
 
 
 <div class="faq">
@@ -1714,12 +1505,11 @@ Frequently asked questions.
 <details>
 
 <summary>
-Do I need trading experience?
+Do I need prior trading experience?
 </summary>
 
 <p>
-No. The education can be adapted to your starting level,
-including beginners who are completely new to trading.
+No. The learning path can start from the fundamentals.
 </p>
 
 </details>
@@ -1728,13 +1518,11 @@ including beginners who are completely new to trading.
 <details>
 
 <summary>
-Is GPS Trading a signal service?
+What markets can I trade?
 </summary>
 
 <p>
-The focus of GPS Trading Academy is education and coaching.
-The aim is to help you understand markets and develop your
-own trading process.
+Training covers areas such as forex, stocks, indices, commodities and crypto.
 </p>
 
 </details>
@@ -1743,12 +1531,11 @@ own trading process.
 <details>
 
 <summary>
-Can I book one-to-one coaching?
+How long does the course take?
 </summary>
 
 <p>
-Yes. Send an enquiry through the contact form and explain
-what you would like help with.
+It depends on your pace and the programme you choose.
 </p>
 
 </details>
@@ -1757,12 +1544,11 @@ what you would like help with.
 <details>
 
 <summary>
-How long does it take to learn trading?
+Is there ongoing support?
 </summary>
 
 <p>
-There is no fixed timeframe. Trading is a skill that requires
-education, practice, review and continued development.
+Coaching and support options can be discussed directly.
 </p>
 
 </details>
@@ -1771,47 +1557,42 @@ education, practice, review and continued development.
 <details>
 
 <summary>
-Are profits guaranteed?
+Do you offer one-to-one coaching?
 </summary>
 
 <p>
-No. Trading involves significant risk and no educational
-programme can guarantee profits or a particular financial result.
+Yes. Contact GPS Trading Academy for availability.
 </p>
 
 </details>
 
 </div>
 
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<div class="contact-box">
-
-<div class="eyebrow">
-START YOUR JOURNEY
 </div>
 
-<h2>
-Ready to take trading seriously?
+
+
+<div id="contact">
+
+<div class="section-label">
+GET IN TOUCH
+</div>
+
+<h2 style="font-size:34px;margin:8px 0 20px">
+Start Your Trading Journey
 </h2>
 
-<p>
-Tell me where you are in your trading journey and what
-you want to learn. I'll get back to you with information
-about the available coaching and education.
+<p style="color:#64716d;margin-bottom:18px">
+
+Have a question or want to learn more? Fill in the form and we’ll get back to you.
+
 </p>
 
 
-<form class="contact-form" onsubmit="sendEmail(event)">
+<form class="contact-form" onsubmit="sendMessage(event)">
 
 <input
 id="name"
-type="text"
 placeholder="Your name"
 required
 >
@@ -1823,56 +1604,65 @@ placeholder="Your email address"
 required
 >
 
-<select id="interest" required>
-
-<option value="">
-What are you interested in?
-</option>
-
-<option>
-Trading Foundations
-</option>
-
-<option>
-Forex Education
-</option>
-
-<option>
-Technical Analysis
-</option>
-
-<option>
-One-to-One Coaching
-</option>
-
-<option>
-Advanced Trading Development
-</option>
-
-</select>
-
 <textarea
 id="message"
-placeholder="Tell me about your trading experience and what you would like help with..."
-required>
-</textarea>
+placeholder="How can I help you?"
+required
+></textarea>
 
-<button
-type="submit"
-class="btn btn-primary">
-SEND MY ENQUIRY →
+<button class="btn btn-primary" type="submit">
+Send Message →
 </button>
 
 </form>
 
 
-<div style="margin-top:25px">
+<p style="margin-top:15px">
 
-<a
-class="btn btn-secondary"
-href="mailto:gsmit0487@gmail.com">
-EMAIL: G S M I T 0 4 8 7 @ G M A I L . C O M
-</a>
+<b>
+✉ gsmit0487@gmail.com
+</b>
+
+<br>
+
+🌐 Worldwide Support
+
+</p>
+
+</div>
+
+
+
+<div>
+
+<div class="section-label">
+COACHING
+</div>
+
+<h2 style="font-size:34px;margin:8px 0 20px">
+Learn. Practice. Trade.
+</h2>
+
+<p style="color:#64716d">
+
+Education first. Discipline always. Risk management at every stage.
+
+</p>
+
+
+<div style="margin-top:25px;padding:20px;border-radius:12px;background:#fff;border:1px solid #dce6e2">
+
+<b>
+Important:
+</b>
+
+<p style="font-size:13px;color:#697773;margin-top:7px">
+
+Trading carries significant risk. Education does not guarantee profits. Always consider your own circumstances and risk tolerance.
+
+</p>
+
+</div>
 
 </div>
 
@@ -1880,65 +1670,83 @@ EMAIL: G S M I T 0 4 8 7 @ G M A I L . C O M
 
 </section>
 
-
-<!-- DISCLAIMER -->
-
-<div class="disclaimer">
-
-<strong>Risk Disclosure:</strong>
-GPS Trading Academy provides educational information and coaching.
-Nothing on this website constitutes personalised financial advice,
-investment advice or a recommendation to buy or sell any financial
-instrument. Trading financial markets involves substantial risk and
-you can lose money. Past performance does not guarantee future results.
-
-</div>
+</main>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-<div class="footer-inner">
+<div class="container">
 
-<div>
-
-<div class="logo">
-GPS <span>TRADING</span> ACADEMY
-</div>
-
-<p style="margin-top:12px">
-Learn. Analyse. Plan. Manage Risk.
-</p>
-
-<p style="margin-top:10px">
-Trading education built around more than 20 years
-of financial trading experience.
-</p>
-
-</div>
+<div class="footer-grid">
 
 
 <div>
 
-<h3>
-Academy
-</h3>
+<div class="footer-brand">
+GPS<span>↗</span>
+</div>
 
-<a href="#learn">
-What You'll Learn
+<small>
+TRADING ACADEMY
+</small>
+
+<p style="margin-top:15px">
+Trade Smarter. Trade with GPS.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Quick Links
+</h4>
+
+<a href="#home">
+Home
+</a>
+
+<a href="#about">
+About
+</a>
+
+<a href="#courses">
+Courses
 </a>
 
 <a href="#education">
 Education
 </a>
 
+</div>
+
+
+<div>
+
+<h4>
+Academy
+</h4>
+
 <a href="#coaching">
-1-to-1 Coaching
+Coaching
+</a>
+
+<a href="#testimonials">
+Testimonials
 </a>
 
 <a href="#faq">
 FAQ
+</a>
+
+<a href="#contact">
+Contact
 </a>
 
 </div>
@@ -1946,75 +1754,79 @@ FAQ
 
 <div>
 
-<h3>
-Contact
-</h3>
+<h4>
+Follow Us
+</h4>
 
-<a href="mailto:gsmit0487@gmail.com">
-Email GPS Trading
-</a>
+<p>
+YouTube &nbsp; Instagram &nbsp; X &nbsp; Facebook &nbsp; LinkedIn
+</p>
 
-<a href="#contact">
-Coaching Enquiry
-</a>
-
-<a href="#about">
-About GPS Trading
-</a>
-
-</div>
+<p>
+✉ gsmit0487@gmail.com
+</p>
 
 </div>
 
 
-<div class="footer-bottom">
+</div>
 
+
+<div class="warning">
+
+<span>
+Risk Warning: Trading involves a high level of risk and may not be suitable for all investors. You could lose more than your initial investment. Past performance is not indicative of future results.
+</span>
+
+<span>
 © 2026 GPS Trading Academy. All rights reserved.
+</span>
+
+</div>
 
 </div>
 
 </footer>
 
 
+
 <script>
 
-function sendEmail(event){
+function sendMessage(e){
 
-event.preventDefault();
+  e.preventDefault();
 
-const name =
-document.getElementById("name").value;
+  const n =
+    document.getElementById('name').value.trim();
 
-const email =
-document.getElementById("email").value;
+  const em =
+    document.getElementById('email').value.trim();
 
-const interest =
-document.getElementById("interest").value;
+  const m =
+    document.getElementById('message').value.trim();
 
-const message =
-document.getElementById("message").value;
+  const subject =
+    encodeURIComponent(
+      'GPS Trading Academy enquiry from ' + n
+    );
 
-const subject =
-encodeURIComponent(
-"GPS Trading Academy Coaching Enquiry"
-);
+  const body =
+    encodeURIComponent(
+      'Name: ' + n +
+      '\nEmail: ' + em +
+      '\n\n' + m
+    );
 
-const body =
-encodeURIComponent(
-"Name: " + name +
-"\nEmail: " + email +
-"\nInterested in: " + interest +
-"\n\nMessage:\n" + message
-);
-
-window.location.href =
-"mailto:gsmit0487@gmail.com" +
-"?subject=" + subject +
-"&body=" + body;
+  window.location.href =
+    'mailto:gsmit0487@gmail.com?subject=' +
+    subject +
+    '&body=' +
+    body;
 
 }
 
 </script>
+
 
 </body>
 </html>
